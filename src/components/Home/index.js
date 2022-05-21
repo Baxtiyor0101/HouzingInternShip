@@ -1,12 +1,13 @@
 import React from "react";
+import Filter from "../Filter";
+import { Container } from "./style";
 
-const ThisForTest = () => {
+const Home = () => {
   return (
-    <div>
-      ThisForTest
-      <h1>This is sample Component</h1>
-    </div>
+    <Container>
+      <Filter />
+    </Container>
   );
 };
 
-export default ThisForTest;
+export default Home;

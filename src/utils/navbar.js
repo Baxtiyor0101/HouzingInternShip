@@ -1,4 +1,6 @@
 import React from "react";
+import Generic from "../pages/Generic";
+import Home from "../pages/Home";
 //components
 
 export const navbar = [
@@ -6,7 +8,7 @@ export const navbar = [
     id: 1,
     title: "Home",
     path: "/home",
-    Element: <div />,
+    Element: <Home />,
     search: "?",
     hidden: false,
     private: false,
@@ -15,7 +17,7 @@ export const navbar = [
     id: 2,
     title: "Properties",
     path: "/properties",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: false,
     private: false,
@@ -24,7 +26,7 @@ export const navbar = [
     id: 3,
     title: "Contacts",
     path: "/contacts",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: false,
     private: false,
@@ -33,7 +35,7 @@ export const navbar = [
     id: 4,
     title: "Signin",
     path: "/signin",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: true,
     private: false,
@@ -42,7 +44,7 @@ export const navbar = [
     id: 5,
     title: "Sign Up",
     path: "/signup",
-    Element: <div />,
+    Element: <Generic />,
     search: "?",
     hidden: true,
     private: false,

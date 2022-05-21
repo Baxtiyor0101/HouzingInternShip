@@ -9,9 +9,13 @@ import {
   Wrapper,
 } from "./style";
 import { navbar } from "../../utils/navbar";
+import Button from "../Generic/Button";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const gotoSignin = () => {
+    navigate("/signin");
+  };
   return (
     <Wrapper className="nocopy">
       <Container>
@@ -32,7 +36,9 @@ const Navbar = () => {
             })}
           </NavbarBody>
           <Logo>
-            <button width={"120px"}>Signin</button>
+            <Button onClick={gotoSignin} width={"120px"}>
+              Signin
+            </Button>
           </Logo>
         </NavbarWrapper>
       </Container>
