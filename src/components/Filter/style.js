@@ -8,6 +8,7 @@ import { ReactComponent as search } from "../../assets/icon/search-icon.svg";
 const Container = styled.div`
   display: flex;
   max-width: var(--width);
+
   width: 100%;
   padding: 0 130px;
   gap: 20px;
