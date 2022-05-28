@@ -12,9 +12,8 @@ import {
   Info,
   InfoPrice,
 } from "./style";
-import img1 from "../../../assets/img/apartment1.jpg";
-import img2 from "../../../assets/img/apartment2.jpg";
-import img3 from "../../../assets/img/apartment3.jpg";
+import img1 from "../../../assets/img/carouselHome1.jpg";
+import img2 from "../../../assets/img/carouselHome2.jpg";
 import { Button } from "../../Generic";
 
 export const Carousel = ({ info }) => {
@@ -27,10 +26,8 @@ export const Carousel = ({ info }) => {
         <MainCarousel ref={slider} dots autoplay>
           <Img src={img1} alt="img" />
           <Img src={img2} alt="img" />
-          <Img src={img3} alt="img" />
           <Img src={img1} alt="img" />
           <Img src={img2} alt="img" />
-          <Img src={img3} alt="img" />
         </MainCarousel>
       </CarouselWrapper>
       <ContainerInfo>

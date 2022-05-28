@@ -14,7 +14,7 @@ const Card = ({ info, mr, ml, margin }) => {
   return (
     <Container className="nocopy">
       {/* 1 */}
-      <Image src={info?.attachment[0]?.imgPath || noimg} alt="house img" />
+      <Image src={info?.attachments[0]?.imgPath || noimg} alt="house img" />
 
       {/* 2 */}
       <InfoWrapper>

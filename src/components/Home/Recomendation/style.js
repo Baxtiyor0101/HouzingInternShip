@@ -4,7 +4,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 95px;
   /* padding: 140px; */
-  /* padding: 0 130px; */
+  /* padding: 0 130px !important; */
 `;
 
 const Wrapper = styled("div")`

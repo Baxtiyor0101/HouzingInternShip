@@ -1,6 +1,7 @@
 import React from "react";
 import Generic from "../pages/Generic";
 import Home from "../pages/Home";
+import PropertiesPage from "../pages/Properties";
 //components
 
 export const navbar = [
@@ -17,7 +18,7 @@ export const navbar = [
     id: 2,
     title: "Properties",
     path: "/properties",
-    Element: <Generic />,
+    Element: <PropertiesPage />,
     search: "?",
     hidden: false,
     private: false,

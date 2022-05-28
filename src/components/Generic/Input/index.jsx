@@ -15,6 +15,8 @@ const Input = ({
   onChange,
   placeholder,
   defaultValue,
+  name,
+  value,
 }) => {
   return (
     <Wrapper>
@@ -28,6 +30,8 @@ const Input = ({
         width={width}
         height={height}
         onClick={onClick}
+        name={name}
+        value={value}
       />
     </Wrapper>
   );
