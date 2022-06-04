@@ -3,7 +3,8 @@ import React from "react";
 import Filter from "../Filter";
 import Carousel from "./Carousel";
 import { Container } from "./style";
-import Generic from "./Recomendation";
+import Recomendation from "./Recomendation";
+import Category from "../Category";
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
       <Filter />
       <Carousel />
       {/* <Recomendation /> */}
-      <Generic />
+      <Recomendation />
+      <Category />
     </Container>
   );
 };

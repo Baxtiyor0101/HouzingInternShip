@@ -10,9 +10,9 @@ import {
 } from "./style";
 import noimg from "../../assets/img/noimg.png";
 // import { Icon } from "../Filter/style";
-const Card = ({ info, mr, ml, margin }) => {
+const Card = ({ info, mr, ml, margin, onClick }) => {
   return (
-    <Container className="nocopy">
+    <Container className="nocopy" onClick={onClick}>
       {/* 1 */}
       <Image src={info?.attachments[0]?.imgPath || noimg} alt="house img" />
 
@@ -22,7 +22,10 @@ const Card = ({ info, mr, ml, margin }) => {
           <User.Img src={info?.user || noimg} />
         </User>
 
-        <Info.Title>{info?.description || "description"}</Info.Title>
+        <Info.Title>
+          {info?.description || "description"} <br /> Category:
+          {info?.category?.name}
+        </Info.Title>
         <Info.Text>
           {info?.name || "house"},{info?.address || "Address"},{" "}
           {info?.city || "City"}
@@ -63,3 +66,5 @@ const Card = ({ info, mr, ml, margin }) => {
 };
 
 export default Card;
+
+

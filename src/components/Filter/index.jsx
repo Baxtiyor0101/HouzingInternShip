@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Advanced, Container, Icon, Section } from "./style";
-import { Popover } from "antd";
+import { Popover, Select } from "antd";
 import { Button, Input } from "../Generic";
 import UseReplace from "../../hooks/useReplace";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
+import useSearch from "../../hooks/useSearch";
+
+// import { useQuery } from "react-query";
+const { REACT_APP_BASE_URL: url } = process.env;
+const { Option } = Select;
 
 const Filter = () => {
+  const query = useSearch();
+  const [title, setTitle] = useState(query.get("category_id"));
   const navigate = useNavigate();
   const onChange = ({ target }) => {
     const { value, name } = target;
     navigate(`${UseReplace(name, value)}`);
+  };
+  const { data } = useQuery(
+    "getHouses",
+    () =>
+      fetch(`${url}/v1/categories/list`, {
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then((res) => res.json()),
+
+    {
+      onSuccess: (res) => {
+        console.log(res, "res");
+        // query.get("category_id") && setTitle(res?.data?.name || "Properties");
+      },
+    }
+  );
+
+  const onSelect = (id) => {
+    setTitle(id);
+    navigate(`/properties/${UseReplace("category_id", id)}`);
   };
   const advancedSearch = (
     <Advanced>
@@ -60,6 +90,21 @@ const Filter = () => {
           name="max_price"
           placeholder="Max Price"
         />
+        <Select
+          value={Number(title)}
+          onChange={onSelect}
+          style={{ minWidth: "131px" }}
+          name=""
+          id=""
+        >
+          {data?.data?.map((value) => {
+            return (
+              <Option key={value.id} value={value.id}>
+                {value?.name}
+              </Option>
+            );
+          })}
+        </Select>
       </Section>
       <Section>
         {/* <Button width={"131px"} ml={20} type={"secondary"}>
@@ -71,6 +116,7 @@ const Filter = () => {
       </Section>
     </Advanced>
   );
+
   return (
     <div className="center">
       <Container>
