@@ -32,6 +32,10 @@ const Input = ({
         onClick={onClick}
         name={name}
         value={value}
+        mt={mt}
+        mb={mb}
+        mr={mr}
+        ml={ml}
       />
     </Wrapper>
   );

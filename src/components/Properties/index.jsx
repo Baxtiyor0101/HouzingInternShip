@@ -19,8 +19,9 @@ const Properties = () => {
     if (!query.get("category_id")) {
       setTitle("Properties");
     }
-    // //eslint-disable-next-line react-hooks/exhoustive-deps
+    //shu yerdagi warningnig qanday yoq qilardik?
   }, [query.get("category_id")]);
+
   const { isLoading, isRefetching } = useQuery(
     ["getHouses"],
     () =>

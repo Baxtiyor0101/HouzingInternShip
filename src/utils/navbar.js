@@ -3,6 +3,7 @@ import DetailesPage from "../pages/Detailes";
 import Generic from "../pages/Generic";
 import Home from "../pages/Home";
 import PropertiesPage from "../pages/Properties";
+import SigninPage from "../pages/Signin";
 //components
 
 export const navbar = [
@@ -48,7 +49,7 @@ export const navbar = [
     id: 4,
     title: "Signin",
     path: "/signin",
-    Element: <Generic />,
+    Element: <SigninPage />,
     search: "?",
     param: true,
     hidden: true,
