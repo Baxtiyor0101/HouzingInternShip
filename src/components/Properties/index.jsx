@@ -19,7 +19,7 @@ const Properties = () => {
     if (!query.get("category_id")) {
       setTitle("Properties");
     }
-    //shu yerdagi warningnig qanday yoq qilardik?
+    // // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query.get("category_id")]);
 
   const { isLoading, isRefetching } = useQuery(
@@ -38,6 +38,8 @@ const Properties = () => {
           setTitle(res?.data[query.get("category_id") - 2].name);
         // console.log(query.get("category_id"), "resprosta");
       },
+      refetchOnWindowFocus: false,
+      keepPreviousData: true,
     }
   );
   useQuery(
@@ -47,10 +49,12 @@ const Properties = () => {
 
     {
       onSuccess: (res) => {
-        // console.log(res, "res");
+        console.log(res, "res");
         setData(res?.data || []);
         // console.log(res.dataList[0]);
       },
+      refetchOnWindowFocus: false,
+      keepPreviousData: true,
     }
   );
   const onClick = (id) => {

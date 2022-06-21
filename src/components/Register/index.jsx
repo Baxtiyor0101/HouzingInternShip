@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const Signin = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -48,29 +48,43 @@ const Signin = () => {
   return (
     <Wrapper>
       <Container>
-        <div className="title">Sign in</div>
+        <div className="title">Registration</div>
         <Input
-          onChange={({ target: { value } }) => setEmail(value)}
+          // onChange={({ target: { value } }) => setEmail(value)}
           value={email}
-          mt={68}
+          mt={48}
+          placeholder={"Login"}
+        />
+        <Input
+          // onChange={({ target: { value } }) => setEmail(value)}
+          value={email}
+          mt={48}
+          placeholder={"First Name"}
+        />
+        <Input
+          // onChange={({ target: { value } }) => setEmail(value)}
+          value={email}
+          mt={48}
+          placeholder={"Last name"}
+        />
+        <Input
+          // onChange={({ target: { value } }) => setEmail(value)}
+          value={email}
+          mt={48}
           placeholder={"Email"}
         />
         <Input
-          type="password"
-          onChange={({ target: { value } }) => {
-            setPassword(value);
-            setError(false);
-          }}
-          value={password}
-          mt={44}
-          mb={16}
-          placeholder={"Password"}
+          // onChange={({ target: { value } }) => setEmail(value)}
+          value={email}
+          mt={48}
+          placeholder={"User role"}
         />
-        {error.length ? <Error>{error}</Error> : null}
-        <Info>
-          <Checkbox>Remember me</Checkbox>
-          <a href="/">Forget</a>
-        </Info>
+        <Input
+          // onChange={({ target: { value } }) => setEmail(value)}
+          value={email}
+          mt={48}
+          placeholder={"Re-enter password"}
+        />
         <Button onClick={onSubmit} mt={32} type={"primary"}>
           Login
         </Button>
@@ -79,4 +93,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Register;

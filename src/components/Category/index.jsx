@@ -33,6 +33,8 @@ export const Generic = () => {
         });
         setState(list);
       },
+      refetchOnWindowFocus: false,
+      keepPreviousData: true,
     }
   );
 

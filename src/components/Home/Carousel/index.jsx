@@ -16,6 +16,8 @@ import img1 from "../../../assets/img/carouselHome1.jpg";
 import img2 from "../../../assets/img/carouselHome2.jpg";
 import { Button } from "../../Generic";
 
+
+
 export const Carousel = ({ info }) => {
   const slider = useRef();
   return (

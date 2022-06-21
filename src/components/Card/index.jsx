@@ -14,7 +14,10 @@ const Card = ({ info, mr, ml, margin, onClick }) => {
   return (
     <Container className="nocopy" onClick={onClick}>
       {/* 1 */}
-      <Image src={info?.attachments[0]?.imgPath || noimg} alt="house img" />
+      <Image
+        src={(info?.attachments && info?.attachments[0]?.imgPath) || noimg}
+        alt="house img"
+      />
 
       {/* 2 */}
       <InfoWrapper>
@@ -66,5 +69,3 @@ const Card = ({ info, mr, ml, margin, onClick }) => {
 };
 
 export default Card;
-
-

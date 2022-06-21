@@ -20,6 +20,8 @@ const Detailes = () => {
       onSuccess: (res) => {
         console.log(res, "res");
       },
+      refetchOnWindowFocus: false,
+      keepPreviousData: true,
     }
   );
   console.log(data, "test");

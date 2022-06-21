@@ -72,3 +72,16 @@ body {
   display: flex;
   align-items: center;
 }
+
+.littleButton {
+  font-family: "Cerebri Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 13px;
+  color: #ffffff;
+  height: 23px;
+  top: calc(50% - 23px / 2 - 337.5px);
+  background: #0d263b;
+  border-radius: 3px;
+}
